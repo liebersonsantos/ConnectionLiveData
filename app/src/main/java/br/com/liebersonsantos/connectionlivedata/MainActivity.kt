@@ -17,15 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         connectionLiveData = ConnectionLiveData(this)
 
-        connectionLiveData.observe(this){ isNetworkAvailable ->
-            if (isNetworkAvailable){
+        connectionLiveData.observe(this) { isNetworkAvailable ->
+            if (isNetworkAvailable) {
                 _binding.txtConnected.text = "Connected"
             } else {
                 _binding.txtConnected.text = "Disconnected"
             }
-
-
         }
-
     }
 }
